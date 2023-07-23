@@ -14,9 +14,9 @@ router.get('/', cache('30 minutes'), async (req, res) => {
     try {
         const params = new URLSearchParams({
             [API_KEY_NAME]: API_KEY_VALUE,
-            ..."aqi:no",
-            ..."alerts:no",
-            ..."days=3",
+            "aqi":"no",
+            "alerts":"no",
+            "days":"3",
             ...url.parse(req.url, true).query
         })
         const apiRes = await needle('get', API_BASE_URL+'/forecast.json?'+params)

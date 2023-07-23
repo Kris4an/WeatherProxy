@@ -19,3 +19,7 @@ app.use('/forecast', require('./routes/forecast'))
 app.use(cors())
 
 app.listen(PORT, () => console.log('Server is running on port '+PORT))
+
+process.on('uncaughtException', function (err) {
+    console.log(err);
+}); 
