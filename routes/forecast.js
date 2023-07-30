@@ -12,7 +12,7 @@ let cache = apicache.middleware
 
 router.get('/', cache('30 minutes'), async (req, res) => {
     try {
-        console.log(`Received request with url '${req.url}' and query '${url.parse(req.url, true).query}'`)
+        console.log(`Received request with url '${req.url}' and query '${JSON.stringify(url.parse(req.url, true).query)}'`)
         let params = new URLSearchParams({
             [API_KEY_NAME]: API_KEY_VALUE,
             "aqi":"no",
